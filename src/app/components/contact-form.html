@@ -7,7 +7,7 @@
         <span class="info-badge">Get Started</span>
         <h2 class="info-title">Let Us Build Your <span class="text-accent">Free Live Mockup</span> First.</h2>
         <p class="info-desc">
-          We do not ask for credit cards or contracts. Provide your details, and our team will design a fully interactive, mobile-optimized landing page for your Melbourne business. 
+          We do not ask for credit cards or contracts. Provide your details, and our team will design a fully interactive, mobile-optimized landing page for your Melbourne or Australian business. 
         </p>
         
         <div class="info-bullets">
@@ -62,7 +62,7 @@
                 type="text" 
                 id="businessName" 
                 formControlName="businessName" 
-                placeholder="e.g. Bundoora Family Chiropractic"
+                placeholder="e.g. Melbourne Family Chiropractic"
                 [class.error-input]="leadForm.get('businessName')?.touched && leadForm.get('businessName')?.invalid">
               @if (leadForm.get('businessName')?.touched && leadForm.get('businessName')?.invalid) {
                 <span class="error-msg">Business name is required</span>
@@ -76,7 +76,7 @@
                 type="text" 
                 id="suburb" 
                 formControlName="suburb" 
-                placeholder="e.g. Thomastown, Bundoora"
+                placeholder="e.g. Melbourne CBD"
                 [class.error-input]="leadForm.get('suburb')?.touched && leadForm.get('suburb')?.invalid">
               @if (leadForm.get('suburb')?.touched && leadForm.get('suburb')?.invalid) {
                 <span class="error-msg">Suburb is required (for local SEO targeting)</span>

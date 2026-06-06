@@ -23,44 +23,40 @@ export class SeoService {
 
       const schema = {
         '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
+        '@type': 'ProfessionalService',
         'name': 'Yarra Digital',
-        'alternateName': 'Yarra Digital Web Development',
+        'alternateName': 'Yarra Digital Web Design & Development',
         'image': 'https://yarra.digital/assets/logo.png', // Fallback link
-        '@id': 'https://yarra.digital/#localbusiness',
+        '@id': 'https://yarra.digital/#organization',
         'url': 'https://yarra.digital',
         'telephone': '0494 721 275',
         'priceRange': '$$',
-        'description': 'Premium, blazing-fast website development for small businesses in Melbourne\'s North-East suburbs.',
+        'description': 'Premium, blazing-fast web design and development services for small businesses in Melbourne and throughout Australia.',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'Bundoora-Thomastown-Eltham North Area',
-          'addressLocality': 'Melbourne North-East',
+          'streetAddress': 'Melbourne',
+          'addressLocality': 'Melbourne',
           'addressRegion': 'VIC',
-          'postalCode': '3083',
+          'postalCode': '3000',
           'addressCountry': 'AU'
         },
         'geo': {
           '@type': 'GeoCoordinates',
-          'latitude': -37.6983,
-          'longitude': 145.0645
+          'latitude': -37.8136,
+          'longitude': 144.9631
         },
         'areaServed': [
           {
-            '@type': 'AdministrativeArea',
-            'name': 'Bundoora'
+            '@type': 'Country',
+            'name': 'Australia'
           },
           {
             '@type': 'AdministrativeArea',
-            'name': 'Thomastown'
+            'name': 'Melbourne'
           },
           {
             '@type': 'AdministrativeArea',
-            'name': 'Eltham North'
-          },
-          {
-            '@type': 'AdministrativeArea',
-            'name': 'Melbourne North-East Suburbs'
+            'name': 'Victoria'
           }
         ],
         'openingHoursSpecification': {

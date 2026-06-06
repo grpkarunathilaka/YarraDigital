@@ -22,7 +22,7 @@ export class DemoZone {
   restaurantMenuItems = signal<MenuItem[]>([
     { name: 'Smashed Avo & Feta', description: 'With mint, cherry tomatoes on sourdough', price: 18.50, available: true },
     { name: 'Signature Cheeseburger', description: 'Wagyu beef, secret sauce, house pickles', price: 22.00, available: true },
-    { name: 'Specialty Cold Brew', description: 'Single origin roasted locally in Eltham', price: 6.50, available: true }
+    { name: 'Specialty Cold Brew', description: 'Single origin roasted locally in Melbourne', price: 6.50, available: true }
   ]);
 
   // Simulate a change from Google Sheets
@@ -51,7 +51,7 @@ export class DemoZone {
   tradesQuoteSubmitted = signal(false);
   tradesData = {
     service: 'Electrical Repair',
-    name: 'Sarah from Bundoora',
+    name: 'Sarah from Melbourne',
     phone: '0412 345 678'
   };
 
