@@ -1,0 +1,70 @@
+<footer class="footer">
+  <div class="container footer-container">
+    
+    <!-- Column 1: Brand & NAP Details -->
+    <div class="footer-brand-col">
+      <a href="#" class="footer-logo" (click)="scrollToSection('hero', $event)">
+        Yarra<span class="text-accent">Digital</span>
+      </a>
+      <p class="footer-tagline">"Your friendly neighborhood web developer"</p>
+      
+      <!-- NAP Details -->
+      <div class="nap-box">
+        <div class="nap-item">
+          <span class="nap-icon">📞</span>
+          <a href="tel:0494721275" class="nap-link">0494 721 275</a>
+        </div>
+        <div class="nap-item">
+          <span class="nap-icon">✉️</span>
+          <a href="mailto:yarra.digital.dev@gmail.com" class="nap-link">yarra.digital.dev@gmail.com</a>
+        </div>
+        <div class="nap-item">
+          <span class="nap-icon">📍</span>
+          <span class="nap-text">Bundoora, Thomastown, & Melbourne's North-East corridors.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-links-col">
+      <h4 class="footer-heading">Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="#offer" (click)="scrollToSection('offer', $event)">Our Offer</a></li>
+        <li><a href="#offer" (click)="scrollToSection('why-us', $event)">Why Yarra Digital</a></li>
+        <li><a href="#demo-zone" (click)="scrollToSection('demo-zone', $event)">Interactive Sandbox</a></li>
+        <li><a href="#contact" (click)="scrollToSection('contact', $event)">Request a Free Mockup</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Tech Edge Description -->
+    <div class="footer-tech-col">
+      <h4 class="footer-heading">Technical Specs</h4>
+      <p class="tech-desc">
+        Built with Angular 19 SSR/SSG. Pre-compiled to static HTML for instant mobile loading, zero database dependencies, and vulnerability-free serverless hosting.
+      </p>
+      <div class="lighthouse-badges">
+        <div class="badge-item">
+          <div class="badge-circle border-green">100</div>
+          <span>Performance</span>
+        </div>
+        <div class="badge-item">
+          <div class="badge-circle border-green">100</div>
+          <span>SEO</span>
+        </div>
+        <div class="badge-item">
+          <div class="badge-circle border-green">100</div>
+          <span>Best Practices</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright Bar -->
+  <div class="footer-bottom">
+    <div class="container bottom-container">
+      <p class="copyright">© 2026 Yarra Digital. All rights reserved.</p>
+      <p class="author-note">Handcrafted with ♥ in Melbourne, VIC</p>
+    </div>
+  </div>
+</footer>

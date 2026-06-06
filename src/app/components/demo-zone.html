@@ -1,0 +1,180 @@
+<section class="demo-section" id="demo-zone">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Live Demos</span>
+      <h2 class="section-title">Interactive Boilerplate Showcase</h2>
+      <p class="section-subtitle">
+        We build functional, optimized templates. Test drive these interactive mockups directly from your device to see our technical capabilities.
+      </p>
+    </div>
+
+    <div class="demo-grid">
+      <!-- Card 1: Restaurants & Cafes -->
+      <div class="card demo-card">
+        <div class="demo-card-header">
+          <div class="demo-icon cafe-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+          </div>
+          <div>
+            <h3 class="demo-card-title">Restaurants & Cafes</h3>
+            <span class="demo-tag">Google Sheets Sync</span>
+          </div>
+        </div>
+        
+        <p class="demo-desc">
+          Update prices or item availability instantly from a Google Sheet. Zero technical training required.
+        </p>
+
+        <!-- Cafe Interactive Widget -->
+        <div class="widget-sandbox">
+          <div class="sandbox-action">
+            <button class="btn btn-secondary btn-sm" (click)="simulateSpreadsheetEdit()" [disabled]="isGoogleSheetSyncing()">
+              <span class="pulse-dot" [class.pulse-active]="isGoogleSheetSyncing()"></span>
+              {{ isGoogleSheetSyncing() ? 'Syncing Spreadsheet...' : 'Simulate Google Sheet Edit' }}
+            </button>
+          </div>
+
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="phone-header">
+                <span class="phone-logo">Yarra Brews</span>
+                <span class="phone-status">Open</span>
+              </div>
+              <div class="phone-menu">
+                @for (item of restaurantMenuItems(); track item.name) {
+                  <div class="phone-menu-item" [class.unavailable]="!item.available">
+                    <div class="item-details">
+                      <div class="item-title-row">
+                        <span class="item-name">{{ item.name }}</span>
+                        @if (!item.available) {
+                          <span class="sold-out-badge">Sold Out</span>
+                        }
+                      </div>
+                      <span class="item-desc">{{ item.description }}</span>
+                    </div>
+                    <span class="item-price">{{ item.price | currency:'AUD' }}</span>
+                  </div>
+                }
+              </div>
+              <div class="sticky-footer">
+                <a href="tel:0494721275" class="phone-cta">Call to Order</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Trade & Home Services -->
+      <div class="card demo-card">
+        <div class="demo-card-header">
+          <div class="demo-icon trade-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          </div>
+          <div>
+            <h3 class="demo-card-title">Trades & Home Services</h3>
+            <span class="demo-tag">Local Maps + Fast Quote</span>
+          </div>
+        </div>
+
+        <p class="demo-desc">
+          High-conversion local SEO landers featuring optimized inquiry workflows that drive phone calls.
+        </p>
+
+        <!-- Trades Quote Widget -->
+        <div class="widget-sandbox">
+          @if (!tradesQuoteSubmitted()) {
+            <div class="trade-form">
+              <h4 class="form-title">Request Emergency Callout</h4>
+              <div class="form-group">
+                <label>Select Service</label>
+                <select class="form-control" [(ngModel)]="tradesData.service">
+                  <option>Electrical Repair</option>
+                  <option>Emergency Plumbing</option>
+                  <option>Aircon Diagnostic</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Your Name & Suburb</label>
+                <input type="text" class="form-control" [(ngModel)]="tradesData.name" placeholder="e.g. John from Thomastown">
+              </div>
+              <button class="btn btn-primary btn-full btn-sm" (click)="submitTradesQuote()">
+                Send Instant Request
+              </button>
+            </div>
+          } @else {
+            <div class="trade-success animate-fade-in">
+              <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <h4>Quote Dispatched!</h4>
+              <p class="success-meta">A text alert has been simulated to the tradesman's device.</p>
+              
+              <!-- SMS Simulator Bubble -->
+              <div class="sms-bubble">
+                <span class="sms-sender">SMS ALERT (Local Sparky)</span>
+                <p class="sms-text">
+                  New Lead: {{ tradesData.name }} requested {{ tradesData.service }} callout. Contact: {{ tradesData.phone }}.
+                </p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Card 3: Allied Health & Salons -->
+      <div class="card demo-card">
+        <div class="demo-card-header">
+          <div class="demo-icon health-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <div>
+            <h3 class="demo-card-title">Allied Health & Salons</h3>
+            <span class="demo-tag">Streamlined Booking</span>
+          </div>
+        </div>
+
+        <p class="demo-desc">
+          Increase bookings by integrating simple widget APIs or light self-booking flows with zero friction.
+        </p>
+
+        <!-- Allied Health Interactive Widget -->
+        <div class="widget-sandbox">
+          <div class="booking-widget">
+            @if (bookingStep() === 'select') {
+              <h4 class="booking-title">Book Chiro Appointment</h4>
+              <p class="booking-meta">Available Times for {{ selectedDate() }}:</p>
+              <div class="time-slots">
+                @for (time of availableTimes; track time) {
+                  <button class="time-slot-btn" (click)="selectTime(time)">{{ time }}</button>
+                }
+              </div>
+            } @else if (bookingStep() === 'confirm') {
+              <div class="booking-confirm animate-fade-in">
+                <h4 class="booking-title">Confirm Booking</h4>
+                <div class="confirm-summary">
+                  <p><strong>Service:</strong> Initial Chiropractic Consultation</p>
+                  <p><strong>Time:</strong> {{ selectedTime() }} on {{ selectedDate() }}</p>
+                </div>
+                <div class="confirm-actions">
+                  <button class="btn btn-secondary btn-sm" (click)="resetBooking()">Back</button>
+                  <button class="btn btn-primary btn-sm" (click)="confirmBooking()">Confirm Slot</button>
+                </div>
+              </div>
+            } @else if (bookingStep() === 'done') {
+              <div class="booking-success animate-fade-in">
+                <div class="success-icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <h4>Appointment Reserved!</h4>
+                <p class="booking-meta">Simulated appointment has been logged in calendar.</p>
+                <button class="btn btn-secondary btn-sm" style="margin-top: 1rem;" (click)="resetBooking()">
+                  Test Booking Again
+                </button>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

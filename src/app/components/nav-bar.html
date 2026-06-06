@@ -1,0 +1,36 @@
+<header class="navbar">
+  <div class="container navbar-container">
+    <a href="#" class="brand" (click)="scrollToSection('hero', $event)">
+      Yarra<span class="text-accent">Digital</span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="nav-links">
+      <a href="#offer" class="nav-link" (click)="scrollToSection('offer', $event)">Our Offer</a>
+      <a href="#offer" class="nav-link" (click)="scrollToSection('why-us', $event)">Why Us</a>
+      <a href="#demo-zone" class="nav-link" (click)="scrollToSection('demo-zone', $event)">Template Demo</a>
+      <a href="#contact" class="btn btn-primary btn-sm" (click)="scrollToSection('contact', $event)">Get a Mockup</a>
+    </nav>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button 
+      class="burger" 
+      [class.active]="isMenuOpen()" 
+      (click)="toggleMenu()" 
+      aria-label="Toggle Navigation Menu">
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" [class.open]="isMenuOpen()">
+    <nav class="mobile-nav-links">
+      <a href="#offer" class="mobile-nav-link" (click)="scrollToSection('offer', $event)">Our Offer</a>
+      <a href="#offer" class="mobile-nav-link" (click)="scrollToSection('why-us', $event)">Why Us</a>
+      <a href="#demo-zone" class="mobile-nav-link" (click)="scrollToSection('demo-zone', $event)">Template Demo</a>
+      <a href="#contact" class="btn btn-primary btn-full" (click)="scrollToSection('contact', $event)">Get a Mockup</a>
+    </nav>
+  </div>
+</header>
