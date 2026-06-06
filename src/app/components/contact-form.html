@@ -1,15 +1,16 @@
 <section class="contact-section" id="contact">
   <div class="container contact-container">
-    
+
     <div class="contact-grid">
       <!-- Left Column: Copy / Value Proposition -->
       <div class="contact-info">
         <span class="info-badge">Get Started</span>
         <h2 class="info-title">Let Us Build Your <span class="text-accent">Free Live Mockup</span> First.</h2>
         <p class="info-desc">
-          We do not ask for credit cards or contracts. Provide your details, and our team will design a fully interactive, mobile-optimized landing page for your Melbourne or Australian business. 
+          We do not ask for credit cards or contracts. Provide your details, and our team will design a fully
+          interactive, mobile-optimized landing page for your Melbourne business.
         </p>
-        
+
         <div class="info-bullets">
           <div class="bullet-item">
             <span class="bullet-icon">✓</span>
@@ -38,115 +39,102 @@
       <!-- Right Column: Intake Form -->
       <div class="form-container">
         @if (!submitSuccess()) {
-          <form [formGroup]="leadForm" (ngSubmit)="onSubmit()" class="reactive-form">
-            <h3 class="form-header">Request Free Draft Layout</h3>
-            
-            <!-- Full Name -->
-            <div class="form-field">
-              <label for="fullName">Full Name</label>
-              <input 
-                type="text" 
-                id="fullName" 
-                formControlName="fullName" 
-                placeholder="e.g. Michael Smith"
-                [class.error-input]="leadForm.get('fullName')?.touched && leadForm.get('fullName')?.invalid">
-              @if (leadForm.get('fullName')?.touched && leadForm.get('fullName')?.invalid) {
-                <span class="error-msg">Full name is required (min 2 characters)</span>
-              }
-            </div>
+        <form [formGroup]="leadForm" (ngSubmit)="onSubmit()" class="reactive-form">
+          <h3 class="form-header">Request Free Draft Layout</h3>
 
-            <!-- Business Name -->
-            <div class="form-field">
-              <label for="businessName">Business Name</label>
-              <input 
-                type="text" 
-                id="businessName" 
-                formControlName="businessName" 
-                placeholder="e.g. Melbourne Family Chiropractic"
-                [class.error-input]="leadForm.get('businessName')?.touched && leadForm.get('businessName')?.invalid">
-              @if (leadForm.get('businessName')?.touched && leadForm.get('businessName')?.invalid) {
-                <span class="error-msg">Business name is required</span>
-              }
-            </div>
-
-            <!-- Suburb -->
-            <div class="form-field">
-              <label for="suburb">Business Suburb</label>
-              <input 
-                type="text" 
-                id="suburb" 
-                formControlName="suburb" 
-                placeholder="e.g. Melbourne CBD"
-                [class.error-input]="leadForm.get('suburb')?.touched && leadForm.get('suburb')?.invalid">
-              @if (leadForm.get('suburb')?.touched && leadForm.get('suburb')?.invalid) {
-                <span class="error-msg">Suburb is required (for local SEO targeting)</span>
-              }
-            </div>
-
-            <!-- Phone Number -->
-            <div class="form-field">
-              <label for="phone">Phone Number</label>
-              <input 
-                type="tel" 
-                id="phone" 
-                formControlName="phone" 
-                placeholder="e.g. 0494 721 275"
-                [class.error-input]="leadForm.get('phone')?.touched && leadForm.get('phone')?.invalid">
-              @if (leadForm.get('phone')?.touched && leadForm.get('phone')?.invalid) {
-                <span class="error-msg">Please enter a valid Australian mobile or landline number</span>
-              }
-            </div>
-
-            <!-- Current Website -->
-            <div class="form-field">
-              <label for="website">Current Website <span class="optional-label">(Optional)</span></label>
-              <input 
-                type="text" 
-                id="website" 
-                formControlName="website" 
-                placeholder="e.g. www.myoldbusiness.com.au"
-                [class.error-input]="leadForm.get('website')?.touched && leadForm.get('website')?.invalid">
-              @if (leadForm.get('website')?.touched && leadForm.get('website')?.invalid) {
-                <span class="error-msg">Please enter a valid website URL</span>
-              }
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-full submit-btn" [disabled]="isSubmitting()">
-              @if (isSubmitting()) {
-                <span class="spinner"></span> Sending Request...
-              } @else {
-                Request Free Mockup Draft
-              }
-            </button>
-          </form>
-        } @else {
-          <!-- Form Submission Success Dialog -->
-          <div class="form-success-card animate-fade-in">
-            <div class="success-shield">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 11 11 13 15 9"></polyline></svg>
-            </div>
-            <h3 class="success-title">Mockup Draft Requested!</h3>
-            <p class="success-text">
-              Thank you for reaching out. We have logged your request and will start analyzing your local competitors in <strong>{{ leadForm.value.suburb || 'your area' }}</strong>.
-            </p>
-            <div class="timeline-step">
-              <div class="step">
-                <span class="step-num active-step">1</span>
-                <span class="step-label">Analysis (Starting)</span>
-              </div>
-              <div class="step">
-                <span class="step-num">2</span>
-                <span class="step-label">Drafting Layout</span>
-              </div>
-              <div class="step">
-                <span class="step-num">3</span>
-                <span class="step-label">Live Link Sent</span>
-              </div>
-            </div>
-            <button class="btn btn-secondary btn-full" (click)="resetForm()">
-              Submit Another Request
-            </button>
+          <!-- Full Name -->
+          <div class="form-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" formControlName="fullName" placeholder="e.g. Michael Smith"
+              [class.error-input]="leadForm.get('fullName')?.touched && leadForm.get('fullName')?.invalid">
+            @if (leadForm.get('fullName')?.touched && leadForm.get('fullName')?.invalid) {
+            <span class="error-msg">Full name is required (min 2 characters)</span>
+            }
           </div>
+
+          <!-- Business Name -->
+          <div class="form-field">
+            <label for="businessName">Business Name</label>
+            <input type="text" id="businessName" formControlName="businessName"
+              placeholder="e.g. Bundoora Family Chiropractic"
+              [class.error-input]="leadForm.get('businessName')?.touched && leadForm.get('businessName')?.invalid">
+            @if (leadForm.get('businessName')?.touched && leadForm.get('businessName')?.invalid) {
+            <span class="error-msg">Business name is required</span>
+            }
+          </div>
+
+          <!-- Suburb -->
+          <div class="form-field">
+            <label for="suburb">Business Suburb</label>
+            <input type="text" id="suburb" formControlName="suburb" placeholder="e.g. Thomastown, Bundoora"
+              [class.error-input]="leadForm.get('suburb')?.touched && leadForm.get('suburb')?.invalid">
+            @if (leadForm.get('suburb')?.touched && leadForm.get('suburb')?.invalid) {
+            <span class="error-msg">Suburb is required (for local SEO targeting)</span>
+            }
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" formControlName="phone" placeholder="e.g. 0494 721 275"
+              [class.error-input]="leadForm.get('phone')?.touched && leadForm.get('phone')?.invalid">
+            @if (leadForm.get('phone')?.touched && leadForm.get('phone')?.invalid) {
+            <span class="error-msg">Please enter a valid Australian mobile or landline number</span>
+            }
+          </div>
+
+          <!-- Current Website -->
+          <div class="form-field">
+            <label for="website">Current Website <span class="optional-label">(Optional)</span></label>
+            <input type="text" id="website" formControlName="website" placeholder="e.g. www.myoldbusiness.com.au"
+              [class.error-input]="leadForm.get('website')?.touched && leadForm.get('website')?.invalid">
+            @if (leadForm.get('website')?.touched && leadForm.get('website')?.invalid) {
+            <span class="error-msg">Please enter a valid website URL</span>
+            }
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full submit-btn" [disabled]="isSubmitting()">
+            @if (isSubmitting()) {
+            <span class="spinner"></span> Sending Request...
+            } @else {
+            Request Free Mockup Draft
+            }
+          </button>
+        </form>
+        } @else {
+        <!-- Form Submission Success Dialog -->
+        <div class="form-success-card animate-fade-in">
+          <div class="success-shield">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+              class="text-accent">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 11 11 13 15 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="success-title">Mockup Draft Requested!</h3>
+          <p class="success-text">
+            Thank you for reaching out. We have logged your request and will start analyzing your local competitors in
+            <strong>{{ leadForm.value.suburb || 'your area' }}</strong>.
+          </p>
+          <div class="timeline-step">
+            <div class="step">
+              <span class="step-num active-step">1</span>
+              <span class="step-label">Analysis (Starting)</span>
+            </div>
+            <div class="step">
+              <span class="step-num">2</span>
+              <span class="step-label">Drafting Layout</span>
+            </div>
+            <div class="step">
+              <span class="step-num">3</span>
+              <span class="step-label">Live Link Sent</span>
+            </div>
+          </div>
+          <button class="btn btn-secondary btn-full" (click)="resetForm()">
+            Submit Another Request
+          </button>
+        </div>
         }
       </div>
     </div>
