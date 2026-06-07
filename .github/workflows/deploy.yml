@@ -36,7 +36,7 @@ jobs:
       - name: Build
         # If your GitHub repository name is different (e.g. capitalized),
         # make sure to match it here (e.g. /YarraDigital/ or /yarra-digital/)
-        run: npx ng build --configuration production --base-href /yarra-digital/
+        run: npx ng build --configuration production --base-href /YarraDigital/
 
       - name: Copy index.html to 404.html
         run: cp dist/yarra-digital/browser/index.html dist/yarra-digital/browser/404.html
